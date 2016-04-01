@@ -118,7 +118,7 @@ public class CoolWeatherDB {
 	/**
 	 * 从数据库读某城市下所有的县城的的城市信息
 	 */
-	public List<County> loadCounty(int cityId){
+	public List<County> loadCounties(int cityId){
 		List<County> list=new ArrayList<County>();
 		Cursor cursor=db.query("Coutny", null,"county_id=?",new String[]{String.valueOf(cityId)},null,null,null);
 		if(cursor.moveToFirst()){
