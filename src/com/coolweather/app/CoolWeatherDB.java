@@ -104,7 +104,7 @@ public class CoolWeatherDB {
 		return list;
 	}
 	/**
-	 * 将City实例存放到数据库中
+	 * 将County实例存放到数据库中
 	 */
 	public void saveCounty(County county){
 		if(county!=null){

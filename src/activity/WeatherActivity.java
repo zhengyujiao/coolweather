@@ -57,7 +57,7 @@ public class WeatherActivity extends Activity implements OnClickListener{
 	 */
 	private Button refreshWeather;
 
-	public void onCreate(Bundle savedInstanceState){
+	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.weather_layout);
@@ -131,13 +131,13 @@ public class WeatherActivity extends Activity implements OnClickListener{
 	private void queryFromServer(final String address, final String type) {
 		// TODO Auto-generated method stub
 		HttpUtil.sendHttpRequest(address, new HttpCallbackListener(){
-			private String response;
+			//private String response;
 
 			@Override
-			public void onFinish(final String type) {
+			public void onFinish(final String response) {
 				// TODO Auto-generated method stub
 				if("countyCode".equals(type)){
-					if(!TextUtils.isEmpty(type)){
+					if(!TextUtils.isEmpty(response)){
 						//从服务器返回的数据中解析出天气代号
 						String[] array=response.split("\\/");
 						if(array!=null&&array.length==2){

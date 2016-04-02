@@ -108,7 +108,7 @@ public class Utility {
  * @param weatherDesp
  * @param publishTime
  */
-	private static void saveWeatherInfo(Context context, String cityName,
+	public static void saveWeatherInfo(Context context, String cityName,
 			String weatherCode, String temp1, String temp2, String weatherDesp,String publishTime) {
 		// TODO Auto-generated method stub
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyyƒÍM‘¬d»’",Locale.CHINA);
@@ -123,7 +123,4 @@ public class Utility {
 		editor.putString("current_date", sdf.format(new Date()));
 		editor.commit();
 	}
-	
-	
-	
 }
